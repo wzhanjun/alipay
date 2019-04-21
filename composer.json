@@ -1,0 +1,22 @@
+{
+    "name": "wzhanjun/alipay",
+    "description": "alipay 1.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jun",
+            "email": "aaasayok@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wzhanjun\\Alipay\\": "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.3@dev"
+    }
+}
