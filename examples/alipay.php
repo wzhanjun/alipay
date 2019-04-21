@@ -36,7 +36,7 @@ $order->setOutTradeNo(time() . rand(10000, 99999))
         ->setTotalFee(0.01)
         ->setSubject('test pay subject')
         ->setBody('test pay body')
-        ->setNotifyUrl('https://www.maiguoer.com')
+        ->setNotifyUrl('https://www.baidu.com')
         ->setClientType(1)
         ->setGoodsType(0)
         ;
