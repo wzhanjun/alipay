@@ -60,7 +60,7 @@ class AppGateway implements GatewayInterface
             'payment_type'      => $order->getPaymentType() ?: $this->config->get('payment_type'),
         ];
 
-        $string = AlipayCore::createLinkString(AlipayCore::paramFilter($payload));
+        $string = AlipayCore::createLinkString(AlipayCore::paramFilter($payload), true);
 
         $payload['sign'] = AlipayRsa::makeSign($string, $this->config->get('alipay_private_key'));
 
