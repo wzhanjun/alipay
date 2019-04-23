@@ -8,15 +8,21 @@ class AlipayCore
     /**
      * 把数组所有元素，按照“参数=参数值”的模式用“&”字符拼接成字符串
      * @param array $param 需要拼接的数组
+     * @param bool $isSign
      * @return string 拼接完成以后的字符串
      */
-    public static function createLinkString(array $param)
+    public static function createLinkString(array $param, $isSign = false)
     {
         $args = '';
 
         foreach ($param as $key => $val)
         {
-            $args .= $key . '="' . $val . '"&';
+            if ($isSign)
+            {
+                 $args .= $key . '="' . $val . '"&';
+            } else {
+                $args .= $key . '=' . $val . '&';
+            }
         }
 
         //去掉最后一个&字符
