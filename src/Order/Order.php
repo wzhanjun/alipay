@@ -36,6 +36,13 @@ class Order implements OrderInterface
 
     private $clientVersion = '1.0.0';
 
+    private $returnUrl;
+
+    private $showUrl;
+
+    private $h5AppPay = true;
+
+
     /**
      * @return mixed
      */
@@ -306,5 +313,64 @@ class Order implements OrderInterface
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getReturnUrl()
+    {
+        return $this->returnUrl;
+    }
+
+    /**
+     * @param mixed $returnUrl
+     */
+    public function setReturnUrl($returnUrl)
+    {
+        $this->returnUrl = $returnUrl;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShowUrl()
+    {
+        return $this->showUrl;
+    }
+
+    /**
+     * @param $showUrl
+     * @return $this
+     */
+    public function setShowUrl($showUrl)
+    {
+        $this->showUrl = $showUrl;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isH5AppPay(): bool
+    {
+        return $this->h5AppPay;
+    }
+
+    /**
+     * @param bool $h5AppPay
+     * @return Order
+     */
+    public function setH5AppPay(bool $h5AppPay)
+    {
+        $this->h5AppPay = $h5AppPay;
+
+        return $this;
+    }
+
+
+
 
 }

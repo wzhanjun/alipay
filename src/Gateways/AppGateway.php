@@ -53,7 +53,7 @@ class AppGateway implements GatewayInterface
             'subject'           => $order->getSubject(),
             'partner'           => $this->config->get('partner'),
             'seller_id'         => $this->config->get('seller_id'),
-            '_input_charset'    => $this->config->get('input_charset'),
+            '_input_charset'    => $this->config->get('input_charset', 'utf-8'),
             'appenv'            => "system={$system}^version=" . $order->getClientVersion(),
             'it_b_pay'          => $order->getItBPay() ?: $this->config->get('payment_time'),
             'notify_url'        => $order->getNotifyUrl() ?: $this->config->get('notify_url'),
