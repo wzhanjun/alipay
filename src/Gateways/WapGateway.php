@@ -10,6 +10,8 @@ use Wzhanjun\Alipay\Contracts\OrderInterface as Order;
 
 class WapGateway implements GatewayInterface
 {
+    const WAP_CREATE_DIRECT_PAY_SERVICE = 'alipay.wap.create.direct.pay.by.user';
+
     private $config;
 
     public function __construct(Config $config)
@@ -28,7 +30,7 @@ class WapGateway implements GatewayInterface
     public function pay(Order $order)
     {
         $payload = [
-            'service'           => 'create_direct_pay_by_user',
+            'service'           => $order->getService() ?: self::WAP_CREATE_DIRECT_PAY_SERVICE,
             'out_trade_no'      => $order->getOutTradeNo(),
             'total_fee'         => $order->getTotalFee(),
             'goods_type'        => $order->getGoodsType(),
